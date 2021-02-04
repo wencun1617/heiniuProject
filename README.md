@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+yarn mock --启动json-server
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+yarn  install 安装项目依赖
 
-## Available Scripts
+yarn start 启动项目
 
-In the project directory, you can run:
+##### 项目的开发规范和代码风格
 
-### `yarn start`
+   1.文件夹，文件名统一小写，多个单词以连接符（-）连接；
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    2. css采用普通css和styled-components结合来编写 （全局采用普通css , 局部采用styled-components ）,少部分使用内联样式；
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+    3. 项目统一使用函数式组件，使用Hooks；
 
-### `yarn test`
+    4. 所有的函数式组件，为了避免不必要的渲染，全部使用memo进行包裹；
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    5. 组件内部状态使用 useState，业务数据放在redux中管理；
 
-### `yarn build`
+    6. redux代码规范：
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+       1. 每个模块有自己的reducer，通过combineReducer进行合并；
+       2. 异步请求代码使用reducx-thunk,写在action.js中;
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    7. 网络请求采用axios：
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+       1. 对axios进行二次封装；
 
-### `yarn eject`
+       2. 模块的请求放在services文件夹下的文件中单独管理；
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    8. 以1920px为设计稿, flexible.js + rem 实现自适应布局， cssrem基准值为80px
