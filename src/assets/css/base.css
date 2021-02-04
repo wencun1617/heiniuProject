@@ -1,0 +1,26 @@
+@import './normalize.css';
+
+/* 约束屏幕尺寸 */
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 33px !important;
+  }
+}
+
+/* @media screen and (min-width: 1920) {
+  html {
+    font-size: 80px !important;
+  }
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
